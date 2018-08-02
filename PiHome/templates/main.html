@@ -1,1 +1,46 @@
 
+
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+   <h1>    Pi Home 12  </h1>
+
+
+    <img src="{{ url_for('static', filename = 'images/pi_logo.png') }}" width="200" height="200">
+
+
+
+   <h2>{{ pins[16].name }}
+   {% if pins[16].state == true %}
+       is currently <strong>on</strong></h2>
+
+       <div class="col-md-12 text-center">
+            <a href="/{{16}}/off" class="btn btn-danger" role="button">Turn off</a>
+       </div>
+
+
+   {% else %}
+      is currently <strong>off</strong></h2>
+
+       <div class="col-md-12 text-center">
+            <a href="/{{16}}/on" class="btn  btn-success" role="button">Turn on</a>
+       </div>
+
+   {% endif %}
+
+<h2>
+    {% if mybutton == False %}
+                    circuit is currently <strong>open</strong></h2>
+    {% else %}
+                    circuit is currently <strong>closed</strong></h2>
+                    <ul id="out"></ul>
+
+    {% endif %}
+
+{% endblock %}
+
+
+
+
