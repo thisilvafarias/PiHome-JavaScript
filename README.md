@@ -1,4 +1,4 @@
-# PiHome-JavaScript
+# PiHome-Python(Flask)using JavaScript
 
           PiHome/ 
                 /app.py 
